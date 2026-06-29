@@ -1,5 +1,37 @@
-<!-- BEGIN:nextjs-agent-rules -->
-# This is NOT the Next.js you know
+# AGENTS.md
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
-<!-- END:nextjs-agent-rules -->
+Правила разработки для этого проекта-портфолио.
+
+## Стек
+
+- Next.js App Router, React, TypeScript, Tailwind CSS 4, shadcn/ui, Motion for React, Lucide React.
+- Пакетный менеджер: npm.
+- Исходный код живет в `src/`.
+- Алиас импортов: `@/*`.
+
+## Архитектура
+
+- `src/app` - маршруты App Router и глобальные стили.
+- `src/components/layout` - общая оболочка, header, footer.
+- `src/components/sections` - крупные секции страниц.
+- `src/components/project` - компоненты домена проектов.
+- `src/components/ui` - shadcn/ui и небольшие переиспользуемые UI-примитивы.
+- `src/data` - все локальные данные портфолио.
+- `src/types` - общие типы проекта.
+- `public/images` - статичные изображения.
+- `public/resume` - файлы резюме.
+
+## Правила
+
+- Не добавлять backend, базу данных, авторизацию, CMS или внешнее хранилище данных без отдельного решения.
+- Все данные портфолио хранить в типизированных TypeScript-файлах внутри `src/data`.
+- Новые структуры данных сначала описывать в `src/types`.
+- Для UI использовать существующие компоненты shadcn/ui и локальные примитивы.
+- Для иконок использовать `lucide-react`.
+- Для анимаций использовать `motion/react`, уважая reduced motion.
+- Держать дизайн простым, доступным и адаптивным.
+- Перед завершением изменений запускать `npm run lint` и `npm run build`.
+
+## Next.js
+
+Версия Next.js может отличаться от старых привычных API. Если поведение App Router или конфигурации неочевидно, сверяйтесь с локальной документацией в `node_modules/next/dist/docs/`.
