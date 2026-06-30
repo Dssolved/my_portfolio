@@ -9,12 +9,10 @@ export function ExperienceSection({ content }: ExperienceSectionProps) {
   const { experience, copy } = content;
 
   return (
-    <AnimatedSection id="experience" className="py-14">
+    <AnimatedSection id="experience" className="py-16">
       <div className="mb-8 flex flex-col gap-2">
-        <p className="text-sm font-medium text-muted-foreground">
-          {copy.sections.experienceEyebrow}
-        </p>
-        <h2 className="text-2xl font-semibold tracking-normal">
+        <p className="section-kicker">{copy.sections.experienceEyebrow}</p>
+        <h2 className="text-3xl font-semibold tracking-normal sm:text-4xl">
           {copy.sections.experienceTitle}
         </h2>
       </div>
@@ -23,7 +21,7 @@ export function ExperienceSection({ content }: ExperienceSectionProps) {
         {experience.map((item) => (
           <article
             key={`${item.company}-${item.period}`}
-            className="rounded-md border bg-card p-5 text-card-foreground shadow-sm"
+            className="data-surface rounded-md p-5"
           >
             <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
               <div>
@@ -41,7 +39,7 @@ export function ExperienceSection({ content }: ExperienceSectionProps) {
 
             <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
               {item.highlights.map((highlight) => (
-                <li key={highlight} className="leading-6">
+                <li key={highlight} className="border-l-2 border-primary/60 pl-3 leading-6">
                   {highlight}
                 </li>
               ))}

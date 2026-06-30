@@ -11,6 +11,30 @@ export const projectsByLocale = {
       year: "2026",
       status: "case-study",
       stack: ["Python", "pandas", "SciPy", "Jupyter", "Matplotlib"],
+      featured: true,
+      metrics: [
+        {
+          label: "Valid days",
+          value: "1,826",
+          description: "PM2.5 observations",
+        },
+        {
+          label: "Exceedance",
+          value: "57.83%",
+          description: "days above threshold",
+        },
+        {
+          label: "Heating season",
+          value: "84.39%",
+          description: "exceedance share",
+        },
+      ],
+      previewImage: {
+        src: "/images/projects/pm25-almaty/daily-pm25-timeseries.png",
+        alt: "Daily PM2.5 concentrations in Almaty from 2021 to 2025",
+        width: 3260,
+        height: 1462,
+      },
       highlights: [
         "Собрал analysis-ready daily dataset из 1,826 валидных наблюдений PM2.5.",
         "Проверил сезонные превышения: 84.39% в heating/inversion season против 39.07% в non-heating season.",
@@ -46,6 +70,30 @@ export const projectsByLocale = {
       year: "2026",
       status: "case-study",
       stack: ["Power BI", "Python", "pandas", "OpenAQ", "Open-Meteo"],
+      featured: true,
+      metrics: [
+        {
+          label: "Cities",
+          value: "6",
+          description: "cross-city view",
+        },
+        {
+          label: "Records",
+          value: "2,098",
+          description: "city-day rows",
+        },
+        {
+          label: "Sources",
+          value: "3",
+          description: "merged datasets",
+        },
+      ],
+      previewImage: {
+        src: "/images/projects/air-quality-bi/dashboard-overview.png",
+        alt: "Power BI overview dashboard for air quality analysis",
+        width: 1283,
+        height: 742,
+      },
       highlights: [
         "Собрал единый датасет из 2,098 city-day records за 2024 год.",
         "Объединил air quality, weather и economic indicators в Python pipeline.",
@@ -99,6 +147,30 @@ export const projectsByLocale = {
       year: "2026",
       status: "case-study",
       stack: ["Python", "pandas", "SciPy", "Jupyter", "Matplotlib"],
+      featured: true,
+      metrics: [
+        {
+          label: "Valid days",
+          value: "1,826",
+          description: "PM2.5 observations",
+        },
+        {
+          label: "Exceedance",
+          value: "57.83%",
+          description: "days above threshold",
+        },
+        {
+          label: "Heating season",
+          value: "84.39%",
+          description: "exceedance share",
+        },
+      ],
+      previewImage: {
+        src: "/images/projects/pm25-almaty/daily-pm25-timeseries.png",
+        alt: "Daily PM2.5 concentrations in Almaty from 2021 to 2025",
+        width: 3260,
+        height: 1462,
+      },
       highlights: [
         "Built an analysis-ready daily dataset with 1,826 valid PM2.5 observations.",
         "Tested seasonal exceedance patterns: 84.39% in the heating/inversion season vs 39.07% in the non-heating season.",
@@ -134,6 +206,30 @@ export const projectsByLocale = {
       year: "2026",
       status: "case-study",
       stack: ["Power BI", "Python", "pandas", "OpenAQ", "Open-Meteo"],
+      featured: true,
+      metrics: [
+        {
+          label: "Cities",
+          value: "6",
+          description: "cross-city view",
+        },
+        {
+          label: "Records",
+          value: "2,098",
+          description: "city-day rows",
+        },
+        {
+          label: "Sources",
+          value: "3",
+          description: "merged datasets",
+        },
+      ],
+      previewImage: {
+        src: "/images/projects/air-quality-bi/dashboard-overview.png",
+        alt: "Power BI overview dashboard for air quality analysis",
+        width: 1283,
+        height: 742,
+      },
       highlights: [
         "Built a unified dataset with 2,098 city-day records for 2024.",
         "Merged air quality, weather, and economic indicators in a Python pipeline.",

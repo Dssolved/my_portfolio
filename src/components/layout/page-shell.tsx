@@ -11,9 +11,9 @@ type PageShellProps = {
 
 export function PageShell({ children, content }: PageShellProps) {
   return (
-    <div className="flex min-h-screen flex-col bg-background text-foreground">
+    <div className="site-canvas flex min-h-screen flex-col text-foreground">
       <SiteHeader content={content} />
-      <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col px-4 sm:px-6 lg:px-8">
+      <main className="relative mx-auto flex w-full max-w-7xl flex-1 flex-col px-4 sm:px-6 lg:px-8">
         {children}
       </main>
       <SiteFooter content={content} />

@@ -26,12 +26,13 @@ export function SiteHeader({ content }: SiteHeaderProps) {
   const homeHref = locale === "ru" ? "/" : "/en";
 
   return (
-    <header className="sticky top-0 z-40 border-b bg-background/90 backdrop-blur">
-      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-40 border-b bg-background/78 backdrop-blur-xl">
+      <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
         <Link
           href={homeHref}
-          className="shrink-0 text-sm font-semibold tracking-normal text-foreground"
+          className="group flex shrink-0 items-center gap-2 text-sm font-semibold tracking-normal text-foreground"
         >
+          <span className="size-2 rounded-full bg-primary shadow-[0_0_0_4px_oklch(0.41_0.094_190_/_14%)]" />
           {profile.name}
         </Link>
 
@@ -43,7 +44,7 @@ export function SiteHeader({ content }: SiteHeaderProps) {
             <a
               key={item.href}
               href={item.href}
-              className="transition-colors hover:text-foreground"
+              className="rounded-md px-2 py-1 transition-colors hover:bg-muted hover:text-foreground"
             >
               {item.label}
             </a>

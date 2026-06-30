@@ -77,6 +77,12 @@ export const educationByLocale = {
       program: "Digital Engineering",
       location: "Алматы",
       period: "сентябрь 2023 - июнь 2027",
+      logo: {
+        src: "/images/logos/narxoz-ru.svg",
+        alt: "Логотип Университета Нархоз",
+        width: 168,
+        height: 48,
+      },
       details: ["GPA 3.71/4.00"],
     },
   ],
@@ -87,6 +93,12 @@ export const educationByLocale = {
       program: "Digital Engineering",
       location: "Almaty",
       period: "September 2023 - June 2027",
+      logo: {
+        src: "/images/logos/narxoz-en.svg",
+        alt: "Narxoz University logo",
+        width: 168,
+        height: 48,
+      },
       details: ["GPA 3.71/4.00"],
     },
   ],
@@ -98,11 +110,35 @@ export const certificatesByLocale = {
       title: "Google Data Analytics Professional Certificate",
       issuer: "Google",
       date: "декабрь 2025",
+      links: [
+        {
+          label: "Coursera",
+          href: "https://www.coursera.org/account/accomplishments/specialization/TOV8PQ8YXIJT",
+          isExternal: true,
+        },
+        {
+          label: "Credly",
+          href: "https://www.credly.com/badges/1e87dd45-6f3b-4d38-ba14-45128b51fd93/linked_in_profile",
+          isExternal: true,
+        },
+      ],
     },
     {
       title: "Google IT Automation with Python Professional Certificate",
       issuer: "Google",
       date: "апрель 2026",
+      links: [
+        {
+          label: "Coursera",
+          href: "https://www.coursera.org/account/accomplishments/specialization/XQ8L47CMOOQI?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=prof",
+          isExternal: true,
+        },
+        {
+          label: "Credly",
+          href: "https://www.credly.com/badges/775177a7-d874-41bd-a6d0-0fc2faad4b6b/linked_in_profile",
+          isExternal: true,
+        },
+      ],
     },
   ],
   en: [
@@ -110,11 +146,35 @@ export const certificatesByLocale = {
       title: "Google Data Analytics Professional Certificate",
       issuer: "Google",
       date: "December 2025",
+      links: [
+        {
+          label: "Coursera",
+          href: "https://www.coursera.org/account/accomplishments/specialization/TOV8PQ8YXIJT",
+          isExternal: true,
+        },
+        {
+          label: "Credly",
+          href: "https://www.credly.com/badges/1e87dd45-6f3b-4d38-ba14-45128b51fd93/linked_in_profile",
+          isExternal: true,
+        },
+      ],
     },
     {
       title: "Google IT Automation with Python Professional Certificate",
       issuer: "Google",
       date: "April 2026",
+      links: [
+        {
+          label: "Coursera",
+          href: "https://www.coursera.org/account/accomplishments/specialization/XQ8L47CMOOQI?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=prof",
+          isExternal: true,
+        },
+        {
+          label: "Credly",
+          href: "https://www.credly.com/badges/775177a7-d874-41bd-a6d0-0fc2faad4b6b/linked_in_profile",
+          isExternal: true,
+        },
+      ],
     },
   ],
 } satisfies Record<Locale, Certificate[]>;

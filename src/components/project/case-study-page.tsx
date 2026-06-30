@@ -14,6 +14,8 @@ type CaseStudyPageProps = {
 export function CaseStudyPage({ caseStudy, content }: CaseStudyPageProps) {
   const caseStudyLabel = content.locale === "ru" ? "Кейс" : "Case study";
   const myRoleLabel = content.locale === "ru" ? "Моя роль" : "My role";
+  const metricsLabel = content.locale === "ru" ? "Ключевые метрики" : "Key metrics";
+  const figuresLabel = content.locale === "ru" ? "Визуальные артефакты" : "Visual artifacts";
 
   return (
     <PageShell content={content}>
@@ -27,13 +29,14 @@ export function CaseStudyPage({ caseStudy, content }: CaseStudyPageProps) {
           </Button>
         </div>
 
-        <header className="grid gap-8 border-b pb-10 lg:grid-cols-[1.35fr_0.65fr]">
+        <header className="grid gap-8 border-b pb-12 lg:grid-cols-[1.2fr_0.8fr]">
           <div className="space-y-5">
-            <p className="text-sm font-medium text-muted-foreground">
+            <div className="inline-flex items-center gap-2 rounded-md border bg-card/75 px-3 py-1.5 text-xs font-medium text-muted-foreground backdrop-blur">
+              <span className="size-1.5 rounded-full bg-primary" />
               {caseStudy.year} · {caseStudyLabel}
-            </p>
+            </div>
             <div className="space-y-4">
-              <h1 className="max-w-4xl text-3xl font-semibold tracking-normal sm:text-5xl">
+              <h1 className="max-w-5xl text-4xl font-semibold leading-tight tracking-normal sm:text-6xl">
                 {caseStudy.title}
               </h1>
               <p className="max-w-3xl text-base leading-7 text-muted-foreground sm:text-lg">
@@ -45,11 +48,13 @@ export function CaseStudyPage({ caseStudy, content }: CaseStudyPageProps) {
             </p>
           </div>
 
-          <aside className="rounded-md border bg-card p-5 text-card-foreground shadow-sm">
-            <h2 className="font-semibold">{myRoleLabel}</h2>
-            <ul className="mt-4 space-y-3 text-sm leading-6 text-muted-foreground">
+          <aside className="data-surface rounded-md p-5">
+            <p className="section-kicker">{myRoleLabel}</p>
+            <ul className="mt-4 divide-y text-sm leading-6 text-muted-foreground">
               {caseStudy.myRole.map((item) => (
-                <li key={item}>{item}</li>
+                <li key={item} className="py-3 first:pt-0">
+                  {item}
+                </li>
               ))}
             </ul>
 
@@ -66,22 +71,25 @@ export function CaseStudyPage({ caseStudy, content }: CaseStudyPageProps) {
           </aside>
         </header>
 
-        <section className="grid gap-4 py-10 md:grid-cols-2 lg:grid-cols-4">
-          {caseStudy.metrics.map((metric) => (
-            <div
-              key={metric.label}
-              className="rounded-md border bg-card p-5 text-card-foreground shadow-sm"
-            >
-              <p className="text-sm text-muted-foreground">{metric.label}</p>
-              <p className="mt-2 text-3xl font-semibold">{metric.value}</p>
-              <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                {metric.description}
-              </p>
-            </div>
-          ))}
+        <section className="py-10">
+          <div className="mb-5 flex items-center gap-3">
+            <p className="section-kicker">{metricsLabel}</p>
+            <div className="h-px flex-1 bg-border" />
+          </div>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {caseStudy.metrics.map((metric) => (
+              <div key={metric.label} className="data-surface rounded-md p-5">
+                <p className="text-sm text-muted-foreground">{metric.label}</p>
+                <p className="mt-2 text-3xl font-semibold">{metric.value}</p>
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                  {metric.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </section>
 
-        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr]">
           <div className="space-y-8">
             {caseStudy.sections.map((section) => (
               <section key={section.title} className="space-y-3">
@@ -96,7 +104,7 @@ export function CaseStudyPage({ caseStudy, content }: CaseStudyPageProps) {
               </section>
             ))}
 
-            <section className="rounded-md border bg-card p-5 text-card-foreground shadow-sm">
+            <section className="data-surface rounded-md p-5">
               <h2 className="font-semibold">{caseStudy.externalLinkLabel}</h2>
               <div className="mt-4 flex flex-wrap gap-2">
                 {caseStudy.links.map((link) => (
@@ -119,10 +127,15 @@ export function CaseStudyPage({ caseStudy, content }: CaseStudyPageProps) {
           </div>
 
           <section className="space-y-5">
+            <div className="flex items-center gap-3">
+              <p className="section-kicker">{figuresLabel}</p>
+              <div className="h-px flex-1 bg-border" />
+            </div>
+
             {caseStudy.figures.map((figure) => (
               <figure
                 key={figure.src}
-                className="overflow-hidden rounded-md border bg-card text-card-foreground shadow-sm"
+                className="data-surface overflow-hidden rounded-md"
               >
                 <Image
                   src={figure.src}
@@ -130,7 +143,7 @@ export function CaseStudyPage({ caseStudy, content }: CaseStudyPageProps) {
                   width={figure.width}
                   height={figure.height}
                   className="h-auto w-full bg-white"
-                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  sizes="(min-width: 1024px) 54vw, 100vw"
                 />
                 <figcaption className="space-y-1 border-t p-4">
                   <p className="text-sm font-medium">{figure.title}</p>

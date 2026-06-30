@@ -15,8 +15,8 @@ export const skillGroupsByLocale = {
       items: ["MySQL", "PostgreSQL", "Airflow", "Сверка данных", "Автоматизация отчетов"],
     },
     {
-      title: "Дополнительно",
-      items: ["GitHub", "Основы математической статистики", "LM Studio"],
+      title: "AI-инструменты и автоматизация",
+      items: ["ChatGPT", "Claude", "Codex", "LM Studio", "LLM-assisted coding", "Внутренние инструменты"],
     },
   ],
   en: [
@@ -33,8 +33,8 @@ export const skillGroupsByLocale = {
       items: ["MySQL", "PostgreSQL", "Airflow", "Data reconciliation", "Reporting automation"],
     },
     {
-      title: "Additional",
-      items: ["GitHub", "Basic mathematical statistics", "LM Studio"],
+      title: "AI Tools and Automation",
+      items: ["ChatGPT", "Claude", "Codex", "LM Studio", "LLM-assisted coding", "Internal tools"],
     },
   ],
 } satisfies Record<Locale, SkillGroup[]>;

@@ -45,6 +45,14 @@ export type Project = {
   stack: string[];
   highlights: string[];
   links: ProjectLink[];
+  featured?: boolean;
+  metrics?: CaseStudyMetric[];
+  previewImage?: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+  };
 };
 
 export type CaseStudyMetric = {
@@ -106,6 +114,12 @@ export type EducationItem = {
   program: string;
   location: string;
   period: string;
+  logo?: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+  };
   details: string[];
 };
 
@@ -113,6 +127,7 @@ export type Certificate = {
   title: string;
   issuer: string;
   date: string;
+  links?: ProjectLink[];
 };
 
 export type LanguageItem = {

@@ -13,14 +13,12 @@ export function ContactSection({ content }: ContactSectionProps) {
   const publicLinks = profile.socialLinks.filter((link) => link.isExternal);
 
   return (
-    <AnimatedSection id="contact" className="py-14">
-      <div className="rounded-md border bg-card p-6 text-card-foreground shadow-sm">
+    <AnimatedSection id="contact" className="py-16">
+      <div className="data-surface rounded-md p-6 sm:p-8">
         <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
           <div className="space-y-2">
-            <p className="text-sm font-medium text-muted-foreground">
-              {copy.sections.contactEyebrow}
-            </p>
-            <h2 className="text-2xl font-semibold tracking-normal">
+            <p className="section-kicker">{copy.sections.contactEyebrow}</p>
+            <h2 className="text-3xl font-semibold tracking-normal sm:text-4xl">
               {copy.sections.contactTitle}
             </h2>
             <p className="max-w-2xl text-sm leading-6 text-muted-foreground">
