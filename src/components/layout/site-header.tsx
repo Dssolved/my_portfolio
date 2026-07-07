@@ -7,6 +7,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
+import { MobileNav } from "@/components/layout/mobile-nav";
 import { Button } from "@/components/ui/button";
 import type { PortfolioContent, SocialIcon } from "@/types/portfolio";
 
@@ -51,7 +52,7 @@ export function SiteHeader({ content }: SiteHeaderProps) {
           ))}
         </nav>
 
-        <div className="flex items-center gap-1">
+        <div className="hidden items-center gap-1 md:flex">
           <Button asChild variant="ghost" size="sm">
             <Link href={alternateHref}>{copy.languageSwitchLabel}</Link>
           </Button>
@@ -73,6 +74,8 @@ export function SiteHeader({ content }: SiteHeaderProps) {
             );
           })}
         </div>
+
+        <MobileNav content={content} />
       </div>
     </header>
   );
