@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Workflow автоматизации SLA-отчетности</title>
+  <desc id="desc">Схема процесса: Excel-отчеты и справочники проходят проверку, сверку, ручную проверку и формирование итогового SLA-отчета.</desc>
+  <rect width="1280" height="720" fill="#f7fbfc"/>
+  <path d="M0 120h1280M0 240h1280M0 360h1280M0 480h1280M0 600h1280M160 0v720M320 0v720M480 0v720M640 0v720M800 0v720M960 0v720M1120 0v720" stroke="#d9e7eb" stroke-width="1" opacity=".55"/>
+  <text x="72" y="82" fill="#0f1720" font-family="Arial, sans-serif" font-size="38" font-weight="700">Автоматизация SLA-отчетности и сверки Excel-данных</text>
+  <text x="72" y="118" fill="#536572" font-family="Arial, sans-serif" font-size="18">Безопасная схема процесса без клиентских данных</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2 2l8 4-8 4z" fill="#0b6b66"/>
+    </marker>
+  </defs>
+
+  <g fill="#ffffff" stroke="#bfd1d8" stroke-width="2">
+    <rect x="72" y="190" width="218" height="132" rx="10"/>
+    <rect x="362" y="190" width="218" height="132" rx="10"/>
+    <rect x="652" y="190" width="218" height="132" rx="10"/>
+    <rect x="942" y="190" width="218" height="132" rx="10"/>
+    <rect x="362" y="418" width="218" height="132" rx="10"/>
+    <rect x="652" y="418" width="218" height="132" rx="10"/>
+    <rect x="942" y="418" width="218" height="132" rx="10"/>
+  </g>
+
+  <g font-family="Arial, sans-serif">
+    <g fill="#0b6b66" font-size="13" font-weight="700">
+      <text x="96" y="220">ВХОД</text>
+      <text x="386" y="220">ПРОВЕРКА</text>
+      <text x="676" y="220">СВЕРКА</text>
+      <text x="966" y="220">РУЧНОЙ ЭТАП</text>
+      <text x="386" y="448">РАСЧЕТ</text>
+      <text x="676" y="448">СЕССИИ</text>
+      <text x="966" y="448">ВЫХОД</text>
+    </g>
+    <g fill="#0f1720" font-size="22" font-weight="700">
+      <text x="96" y="255">Excel-файлы</text>
+      <text x="386" y="255">Структура</text>
+      <text x="676" y="255">Справочники</text>
+      <text x="966" y="255">Мастер-сверка</text>
+      <text x="386" y="483">SLA-метрики</text>
+      <text x="676" y="483">История</text>
+      <text x="966" y="483">SLA-отчет</text>
+    </g>
+    <g fill="#536572" font-size="16">
+      <text x="96" y="286">отчеты по ФНО</text>
+      <text x="96" y="308">прошлый период</text>
+      <text x="386" y="286">колонки, даты</text>
+      <text x="386" y="308">статусы, форматы</text>
+      <text x="676" y="286">компании, команды</text>
+      <text x="676" y="308">исключения</text>
+      <text x="966" y="286">проверка спорных</text>
+      <text x="966" y="308">сохранение правок</text>
+      <text x="386" y="514">агрегация по</text>
+      <text x="386" y="536">командам</text>
+      <text x="676" y="514">черновики, лог</text>
+      <text x="676" y="536">повторяемость</text>
+      <text x="966" y="514">единый формат</text>
+      <text x="966" y="536">готовый Excel</text>
+    </g>
+  </g>
+
+  <g stroke="#0b6b66" stroke-width="3" fill="none" marker-end="url(#arrow)">
+    <path d="M290 256h58"/>
+    <path d="M580 256h58"/>
+    <path d="M870 256h58"/>
+    <path d="M1051 322v53c0 28-22 43-50 43H580"/>
+    <path d="M580 484h58"/>
+    <path d="M870 484h58"/>
+  </g>
+
+  <rect x="72" y="622" width="1088" height="44" rx="8" fill="#eaf4f4" stroke="#bfd1d8"/>
+  <text x="96" y="650" fill="#0b6b66" font-family="Arial, sans-serif" font-size="17" font-weight="700">Результат:</text>
+  <text x="188" y="650" fill="#33434d" font-family="Arial, sans-serif" font-size="17">ручная подготовка от нескольких дней/недель сократилась до автоматической обработки за минуты</text>
+</svg>

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+  <title id="title">SLA tool and final report mockup</title>
+  <desc id="desc">An anonymized mockup of the desktop tool: session list, execution log, and final team-level report summary.</desc>
+  <rect width="1280" height="760" fill="#f7fbfc"/>
+  <rect x="64" y="64" width="1152" height="632" rx="18" fill="#ffffff" stroke="#bfd1d8" stroke-width="2"/>
+  <rect x="64" y="64" width="1152" height="64" rx="18" fill="#eaf4f4"/>
+  <rect x="64" y="112" width="1152" height="16" fill="#eaf4f4"/>
+  <circle cx="102" cy="96" r="8" fill="#0b6b66"/>
+  <circle cx="130" cy="96" r="8" fill="#d4e3e7"/>
+  <circle cx="158" cy="96" r="8" fill="#d4e3e7"/>
+  <text x="196" y="103" fill="#0f1720" font-family="Arial, sans-serif" font-size="22" font-weight="700">Prosto SLA · working session</text>
+  <text x="1028" y="103" fill="#536572" font-family="Arial, sans-serif" font-size="16">beta</text>
+
+  <rect x="96" y="162" width="280" height="492" rx="12" fill="#fbfefe" stroke="#d9e7eb"/>
+  <text x="122" y="202" fill="#0f1720" font-family="Arial, sans-serif" font-size="20" font-weight="700">Sessions</text>
+  <g font-family="Arial, sans-serif" font-size="15">
+    <rect x="122" y="226" width="228" height="58" rx="8" fill="#eaf4f4" stroke="#bfd1d8"/>
+    <text x="140" y="251" fill="#0f1720" font-weight="700">Q2 SLA · draft</text>
+    <text x="140" y="273" fill="#536572">master check saved</text>
+    <rect x="122" y="298" width="228" height="58" rx="8" fill="#ffffff" stroke="#d9e7eb"/>
+    <text x="140" y="323" fill="#0f1720" font-weight="700">Q1 SLA · final</text>
+    <text x="140" y="345" fill="#536572">report generated</text>
+    <rect x="122" y="370" width="228" height="58" rx="8" fill="#ffffff" stroke="#d9e7eb"/>
+    <text x="140" y="395" fill="#0f1720" font-weight="700">Reference check</text>
+    <text x="140" y="417" fill="#536572">log and exceptions</text>
+  </g>
+
+  <rect x="412" y="162" width="772" height="492" rx="12" fill="#fbfefe" stroke="#d9e7eb"/>
+  <text x="442" y="202" fill="#0f1720" font-family="Arial, sans-serif" font-size="20" font-weight="700">Final team-level summary</text>
+  <text x="442" y="230" fill="#536572" font-family="Arial, sans-serif" font-size="15">Anonymized values used only to show report structure</text>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="442" y="262" width="704" height="44" rx="8" fill="#0b6b66"/>
+    <text x="470" y="290" fill="#ffffff" font-size="15" font-weight="700">Team</text>
+    <text x="650" y="290" fill="#ffffff" font-size="15" font-weight="700">Tasks</text>
+    <text x="790" y="290" fill="#ffffff" font-size="15" font-weight="700">Done</text>
+    <text x="960" y="290" fill="#ffffff" font-size="15" font-weight="700">SLA</text>
+    <text x="1050" y="290" fill="#ffffff" font-size="15" font-weight="700">Status</text>
+    <g font-size="15" fill="#33434d">
+      <rect x="442" y="314" width="704" height="48" fill="#ffffff" stroke="#e2edf0"/>
+      <text x="470" y="344">Team A</text><text x="660" y="344">124</text><text x="810" y="344">119</text><text x="960" y="344">96%</text><text x="1050" y="344">OK</text>
+      <rect x="442" y="362" width="704" height="48" fill="#f7fbfc" stroke="#e2edf0"/>
+      <text x="470" y="392">Team B</text><text x="660" y="392">98</text><text x="810" y="392">91</text><text x="960" y="392">93%</text><text x="1050" y="392">OK</text>
+      <rect x="442" y="410" width="704" height="48" fill="#ffffff" stroke="#e2edf0"/>
+      <text x="470" y="440">Team C</text><text x="660" y="440">76</text><text x="810" y="440">68</text><text x="960" y="440">89%</text><text x="1050" y="440">review</text>
+      <rect x="442" y="458" width="704" height="48" fill="#f7fbfc" stroke="#e2edf0"/>
+      <text x="470" y="488">Total</text><text x="660" y="488">298</text><text x="810" y="488">278</text><text x="960" y="488">93%</text><text x="1050" y="488">generated</text>
+    </g>
+  </g>
+
+  <rect x="442" y="548" width="334" height="64" rx="10" fill="#eaf4f4" stroke="#bfd1d8"/>
+  <text x="466" y="576" fill="#0b6b66" font-family="Arial, sans-serif" font-size="16" font-weight="700">Execution log</text>
+  <text x="466" y="598" fill="#536572" font-family="Arial, sans-serif" font-size="14">structure check, reconciliation, export</text>
+  <rect x="812" y="548" width="334" height="64" rx="10" fill="#eaf4f4" stroke="#bfd1d8"/>
+  <text x="836" y="576" fill="#0b6b66" font-family="Arial, sans-serif" font-size="16" font-weight="700">Export</text>
+  <text x="836" y="598" fill="#536572" font-family="Arial, sans-serif" font-size="14">unified Excel report by FNO</text>
+</svg>

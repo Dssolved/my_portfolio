@@ -49,18 +49,47 @@ export const projectsByLocale = {
     },
     {
       slug: "sla-reporting-data-reconciliation",
-      title: "SLA-отчетность и сверка данных",
+      title: "Автоматизация SLA-отчетности и сверки Excel-данных",
       summary:
-        "Python-инструмент для обработки Excel-отчетов, сверки справочников, расчета SLA и формирования итогового отчета.",
+        "Десктопное приложение на Python для подготовки SLA-отчетности: проверка Excel-файлов, сверка справочников, мастер-сверка, сессии и финальный отчет.",
       year: "2026",
       status: "launched",
-      stack: ["Python", "pandas", "openpyxl", "Excel"],
-      highlights: [
-        "Сократил подготовку отчетности с нескольких недель ручной работы до нескольких минут.",
-        "Автоматизировал обработку Excel-файлов, расчет показателей и формирование итогового отчета.",
-        "Снизил зависимость процесса от ручных расчетов и уменьшил риск ошибок.",
+      stack: ["Python", "PySide6", "pandas", "openpyxl", "PyInstaller"],
+      featured: true,
+      metrics: [
+        {
+          label: "Скорость",
+          value: "недели → минуты",
+          description: "автоматическая обработка",
+        },
+        {
+          label: "Формат",
+          value: "единый отчет",
+          description: "SLA по командам",
+        },
+        {
+          label: "Статус",
+          value: "бета",
+          description: "внутренний инструмент",
+        },
       ],
-      links: [],
+      previewImage: {
+        src: "/images/projects/sla-reporting/process-flow-ru.svg",
+        alt: "Схема workflow автоматизации SLA-отчетности",
+        width: 1280,
+        height: 720,
+      },
+      highlights: [
+        "Автоматизировал workflow, который раньше мог занимать от нескольких дней до нескольких недель ручной работы в Excel.",
+        "Реализовал проверку структуры файлов, сверку справочников, сохранение ручных исправлений и формирование финального SLA-отчета.",
+        "Снизил риск ошибок в статусах, справочниках и ручных переносах между периодами.",
+      ],
+      links: [
+        {
+          label: "Открыть кейс",
+          href: "/projects/sla-reporting-data-reconciliation",
+        },
+      ],
     },
     {
       slug: "air-quality-power-bi-dashboard",
@@ -185,18 +214,47 @@ export const projectsByLocale = {
     },
     {
       slug: "sla-reporting-data-reconciliation",
-      title: "SLA Reporting and Data Reconciliation",
+      title: "SLA Reporting and Excel Data Reconciliation Automation",
       summary:
-        "A Python tool for processing Excel reports, reconciling reference data, calculating SLA metrics, and generating final reports.",
+        "A Python desktop app for SLA reporting: Excel file validation, reference reconciliation, master checks, calculation sessions, and final report export.",
       year: "2026",
       status: "launched",
-      stack: ["Python", "pandas", "openpyxl", "Excel"],
-      highlights: [
-        "Reduced report preparation from several weeks of manual work to a few minutes.",
-        "Automated Excel processing, metric calculation, and final report generation.",
-        "Reduced dependency on manual calculations and lowered the risk of data errors.",
+      stack: ["Python", "PySide6", "pandas", "openpyxl", "PyInstaller"],
+      featured: true,
+      metrics: [
+        {
+          label: "Speed",
+          value: "weeks → minutes",
+          description: "automatic processing",
+        },
+        {
+          label: "Format",
+          value: "unified report",
+          description: "team-level SLA",
+        },
+        {
+          label: "Status",
+          value: "beta",
+          description: "internal tool",
+        },
       ],
-      links: [],
+      previewImage: {
+        src: "/images/projects/sla-reporting/process-flow-en.svg",
+        alt: "SLA reporting automation workflow diagram",
+        width: 1280,
+        height: 720,
+      },
+      highlights: [
+        "Automated a workflow that could previously take from several days to several weeks of manual Excel work.",
+        "Implemented file structure validation, reference reconciliation, preserved manual corrections, and final SLA report generation.",
+        "Reduced the risk of errors in statuses, reference data, and manual carry-over between periods.",
+      ],
+      links: [
+        {
+          label: "View case study",
+          href: "/en/projects/sla-reporting-data-reconciliation",
+        },
+      ],
     },
     {
       slug: "air-quality-power-bi-dashboard",

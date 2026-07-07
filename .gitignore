@@ -24,6 +24,8 @@
 .DS_Store
 *.pem
 .idea/
+/tmp/
+ARTYOM_OSTANIN_PROFILE.md
 
 # debug
 npm-debug.log*

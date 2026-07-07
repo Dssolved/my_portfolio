@@ -525,3 +525,218 @@ export const airQualityBiCaseStudies = {
     externalLinkLabel: "Data sources",
   },
 } satisfies Record<Locale, CaseStudy>;
+
+export const slaReportingCaseStudies = {
+  ru: {
+    slug: "sla-reporting-data-reconciliation",
+    title: "Автоматизация SLA-отчетности и сверки Excel-данных",
+    subtitle:
+      "Внутренний десктопный инструмент для подготовки SLA-отчетности: Excel-отчеты, справочники, мастер-сверка, сохранение ручных исправлений и финальный отчет по командам.",
+    year: "2026",
+    context:
+      "Проект выполнен в рамках операционной аналитики в Просто Бэк-офис. На сайте показана обезличенная структура решения: без названий компаний, БИН, ФИО, номеров задач и внутренних формулировок.",
+    myRole: [
+      "Спроектировал процесс обработки: от загрузки Excel-файлов и справочников до мастер-сверки и финального SLA-отчета.",
+      "Разработал десктопное приложение на Python с интерфейсом PySide6, обработкой данных через pandas/openpyxl и сборкой в Windows .exe.",
+      "Реализовал сохранение ручных исправлений, работу с расчетными сессиями, журнал выполнения, Excel-экспорт и тестирование бизнес-логики.",
+    ],
+    stack: [
+      "Python 3.13",
+      "PySide6",
+      "pandas",
+      "openpyxl",
+      "PyInstaller",
+      "Send2Trash",
+      "pytest",
+      "unittest",
+    ],
+    metrics: [
+      {
+        label: "Скорость",
+        value: "недели → минуты",
+        description:
+          "Основная автоматическая обработка выполняется за минуты вместо длительной ручной подготовки.",
+      },
+      {
+        label: "Файлы",
+        value: "Excel-процесс",
+        description:
+          "Загрузка отчетов по ФНО, справочников, данных прошлого периода и мастер-сверки.",
+      },
+      {
+        label: "Качество",
+        value: "меньше ручных ошибок",
+        description:
+          "Снижен риск пропущенных строк, неверных статусов и несогласованных форматов.",
+      },
+      {
+        label: "Статус",
+        value: "бета",
+        description:
+          "Рабочий внутренний инструмент, готовый к практическому использованию.",
+      },
+    ],
+    sections: [
+      {
+        title: "Проблема",
+        body: [
+          "Раньше расчет SLA выполнялся вручную в Excel: нужно было собрать отчеты по разным ФНО, проверить компании по нескольким справочникам, сопоставить команды, найти исключения, сверить спорные строки, перенести данные прошлого периода и собрать итоговую сводку.",
+          "Из-за большого количества файлов, ручных проверок и повторяющихся Excel-операций процесс мог занимать от нескольких дней до нескольких недель. Дополнительно рос риск ошибок: пропущенные строки, неверные статусы, разные форматы файлов, потеря ручных исправлений и несогласованный итоговый отчет.",
+        ],
+      },
+      {
+        title: "Входные данные",
+        body: [
+          "Решение работает с Excel-отчетами по ФНО, справочниками компаний на разные контрольные даты, актуальным справочником команд, задачами, статусами выполнения, реестрами сверки, данными прошлого периода и исправленной пользователем мастер-сверкой.",
+          "Реальные клиентские данные не публикуются. В портфолио используются только безопасные схемы и мокапы, которые показывают структуру процесса без чувствительных строк.",
+        ],
+      },
+      {
+        title: "Что делает приложение",
+        body: [
+          "Приложение проверяет структуру Excel-файлов, нормализует компании, команды, статусы и даты, сопоставляет отчеты с несколькими справочниками, определяет актуальные задачи и исключения.",
+          "Далее инструмент формирует мастер-сверку для ручной проверки, сохраняет пользовательские исправления между запусками, подтягивает переходящие задачи из прошлого периода и считает показатели выполнения по командам.",
+          "На финальном этапе приложение формирует отдельные отчеты по ФНО, собирает единый итоговый SLA-отчет, хранит расчеты по сессиям, позволяет продолжить расчет, открыть прошлые сессии и смотреть журнал выполнения.",
+        ],
+      },
+      {
+        title: "Результат",
+        body: [
+          "Автоматизирован процесс, который раньше мог занимать до нескольких недель ручной работы в Excel. Основная обработка теперь выполняется за минуты, а итоговые Excel-файлы формируются автоматически и уже подготовлены для дальнейшей работы.",
+          "Процесс стал более воспроизводимым: появились расчетные сессии, история, черновики, журнал выполнения и единый формат итогового SLA-отчета.",
+        ],
+      },
+    ],
+    figures: [
+      {
+        title: "Workflow обработки",
+        description:
+          "Безопасная схема показывает путь от Excel-отчетов и справочников до мастер-сверки, расчетных сессий и финального SLA-отчета.",
+        src: "/images/projects/sla-reporting/process-flow-ru.svg",
+        alt: "Workflow автоматизации SLA-отчетности и сверки Excel-данных",
+        width: 1280,
+        height: 720,
+      },
+      {
+        title: "Обезличенный мокап результата",
+        description:
+          "Мокап демонстрирует список сессий, журнал выполнения и структуру итоговой сводки по командам без реальных данных.",
+        src: "/images/projects/sla-reporting/report-mock-ru.svg",
+        alt: "Обезличенный мокап desktop-инструмента и итогового SLA-отчета",
+        width: 1280,
+        height: 760,
+      },
+    ],
+    links: [],
+    note: "Внутренний рабочий инструмент. Реальные файлы, названия компаний, БИН, ФИО, номера задач и внутренние формулировки не публикуются.",
+    backHref: "/",
+    backLabel: "Назад на главную",
+    externalLinkLabel: "Приватность",
+  },
+  en: {
+    slug: "sla-reporting-data-reconciliation",
+    title: "SLA Reporting and Excel Data Reconciliation Automation",
+    subtitle:
+      "An internal desktop tool for SLA reporting: Excel reports, reference data, master reconciliation, preserved manual corrections, and final team-level reports.",
+    year: "2026",
+    context:
+      "The project was built as part of operations analytics work at Prosto Back-office. The site shows an anonymized structure of the solution without company names, IDs, personal data, task numbers, or internal wording.",
+    myRole: [
+      "Designed the processing workflow from Excel file upload and reference data checks to master reconciliation and final SLA reporting.",
+      "Built a Python desktop app with a PySide6 interface, pandas/openpyxl data processing, and Windows .exe packaging.",
+      "Implemented preserved manual corrections, calculation sessions, execution logs, Excel export, and business-logic tests.",
+    ],
+    stack: [
+      "Python 3.13",
+      "PySide6",
+      "pandas",
+      "openpyxl",
+      "PyInstaller",
+      "Send2Trash",
+      "pytest",
+      "unittest",
+    ],
+    metrics: [
+      {
+        label: "Speed",
+        value: "weeks → minutes",
+        description:
+          "Core automatic processing runs in minutes instead of long manual preparation.",
+      },
+      {
+        label: "Files",
+        value: "Excel workflow",
+        description:
+          "FNO reports, reference files, previous-period data, and corrected master checks.",
+      },
+      {
+        label: "Quality",
+        value: "fewer manual errors",
+        description:
+          "Reduced risk of missed rows, incorrect statuses, and inconsistent report formats.",
+      },
+      {
+        label: "Status",
+        value: "beta",
+        description:
+          "Working internal tool ready for practical use.",
+      },
+    ],
+    sections: [
+      {
+        title: "Problem",
+        body: [
+          "Previously, SLA calculation was performed manually in Excel: reports across different FNOs had to be collected, companies checked against several reference files, teams matched, exceptions found, disputed rows reviewed, previous-period data carried over, and the final team-level summary assembled.",
+          "Because of many files, manual checks, and repeated Excel operations, the process could take from several days to several weeks. It also created a high risk of errors: missed rows, incorrect statuses, inconsistent file formats, lost manual corrections, and non-standard final reports.",
+        ],
+      },
+      {
+        title: "Input Data",
+        body: [
+          "The solution works with Excel reports by FNO, company reference files for different control dates, the current team reference, tasks, completion statuses, reconciliation registers, previous-period data, and a user-corrected master reconciliation file.",
+          "Real client data is not published. The portfolio uses safe diagrams and mockups that show the process structure without sensitive rows.",
+        ],
+      },
+      {
+        title: "What the App Does",
+        body: [
+          "The app validates Excel file structure, normalizes companies, teams, statuses, and dates, matches reports against several reference files, and identifies current tasks and exceptions.",
+          "It then generates a master reconciliation file for manual review, preserves user corrections between runs, pulls carry-over tasks from the previous period, and calculates completion metrics by team.",
+          "At the final stage, the app generates separate FNO reports, assembles one final SLA report, stores calculations as sessions, allows previous sessions to be reopened, and provides an execution log.",
+        ],
+      },
+      {
+        title: "Result",
+        body: [
+          "The workflow that could previously take up to several weeks of manual Excel work was automated. The core processing now runs in minutes, and final Excel files are generated automatically in a ready-to-use structure.",
+          "The process became more reproducible through calculation sessions, history, drafts, execution logs, and a unified final SLA report format.",
+        ],
+      },
+    ],
+    figures: [
+      {
+        title: "Processing workflow",
+        description:
+          "A safe diagram showing the path from Excel reports and reference files to master reconciliation, calculation sessions, and final SLA export.",
+        src: "/images/projects/sla-reporting/process-flow-en.svg",
+        alt: "SLA reporting and Excel reconciliation automation workflow",
+        width: 1280,
+        height: 720,
+      },
+      {
+        title: "Anonymized output mockup",
+        description:
+          "A mockup showing sessions, execution logs, and the final team-level report structure without real data.",
+        src: "/images/projects/sla-reporting/report-mock-en.svg",
+        alt: "Anonymized mockup of the desktop tool and final SLA report",
+        width: 1280,
+        height: 760,
+      },
+    ],
+    links: [],
+    note: "Internal working tool. Real files, company names, IDs, personal data, task numbers, and internal wording are not published.",
+    backHref: "/en",
+    backLabel: "Back to home",
+    externalLinkLabel: "Privacy",
+  },
+} satisfies Record<Locale, CaseStudy>;

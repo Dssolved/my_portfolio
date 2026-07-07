@@ -1,6 +1,7 @@
 import {
   airQualityBiCaseStudies,
   pm25AlmatyCaseStudies,
+  slaReportingCaseStudies,
 } from "@/data/case-studies";
 import { copyByLocale } from "@/data/copy";
 import {
@@ -46,6 +47,7 @@ export const portfolioContent = {
 export const caseStudies = {
   pm25Almaty: pm25AlmatyCaseStudies,
   airQualityBi: airQualityBiCaseStudies,
+  slaReporting: slaReportingCaseStudies,
 };
 
 export const profile = portfolioContent.ru.profile;
