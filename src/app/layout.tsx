@@ -16,12 +16,31 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const { profile } = portfolioContent.ru;
+const homeTitle = `${profile.name} | ${profile.role}`;
+
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "http://localhost:3000");
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
-    default: `${portfolioContent.ru.profile.name} | ${portfolioContent.ru.profile.role}`,
-    template: `%s | ${portfolioContent.ru.profile.name}`,
+    default: homeTitle,
+    template: `%s | ${profile.name}`,
   },
-  description: portfolioContent.ru.profile.bio,
+  description: profile.bio,
+  openGraph: {
+    type: "website",
+    siteName: profile.name,
+    locale: "ru_RU",
+    alternateLocale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({
