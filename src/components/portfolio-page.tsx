@@ -1,3 +1,4 @@
+import { PersonJsonLd } from "@/components/json-ld";
 import { PageShell } from "@/components/layout/page-shell";
 import { ContactSection } from "@/components/sections/contact-section";
 import { CredentialsSection } from "@/components/sections/credentials-section";
@@ -14,6 +15,7 @@ type PortfolioPageProps = {
 export function PortfolioPage({ content }: PortfolioPageProps) {
   return (
     <PageShell content={content}>
+      <PersonJsonLd content={content} />
       <HeroSection content={content} />
       <ProjectsSection content={content} />
       <ExperienceSection content={content} />

@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import type { ReactNode } from "react";
 
 import { portfolioContent } from "@/data";
+import { siteUrl } from "@/lib/site";
 
 import "./globals.css";
 
@@ -18,12 +19,6 @@ const geistMono = Geist_Mono({
 
 const { profile } = portfolioContent.ru;
 const homeTitle = `${profile.name} | ${profile.role}`;
-
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ??
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL
-    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : "http://localhost:3000");
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
