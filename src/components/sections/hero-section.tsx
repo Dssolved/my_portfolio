@@ -37,9 +37,9 @@ const heroContentByLocale: Record<
       "Работаю на стыке операционной аналитики, автоматизации отчетности и аналитики данных. Пишу Python/SQL-решения для обработки данных, сверок, пайплайнов и понятной визуализации результатов.",
     profileTitle: "Аналитический профиль",
     profileRows: [
-      ["Стек", "Python · SQL · Excel · Power BI"],
+      ["Стек", "Python · SQL · Excel · Power BI · DataLens · Airflow"],
       ["Автоматизация", "отчеты · пайплайны · внутренние инструменты"],
-      ["ИИ в работе", "ChatGPT · Claude · Codex · LM Studio"],
+      ["ИИ в работе", "LM Studio (локальные LLM) · AI-ассистенты в разработке"],
       ["Контекст", "бизнес-процессы · электронная коммерция · качество воздуха"],
     ],
     stats: [
@@ -66,9 +66,9 @@ const heroContentByLocale: Record<
       "I work across operations analytics, reporting automation, and data analytics. I build Python/SQL solutions for data processing, reconciliation, pipelines, and clear result visualization.",
     profileTitle: "Analytical profile",
     profileRows: [
-      ["Stack", "Python · SQL · Excel · Power BI"],
+      ["Stack", "Python · SQL · Excel · Power BI · DataLens · Airflow"],
       ["Automation", "reports · pipelines · internal tools"],
-      ["AI at work", "ChatGPT · Claude · Codex · LM Studio"],
+      ["AI at work", "LM Studio (local LLMs) · AI coding assistants"],
       ["Context", "business processes · e-commerce · air quality"],
     ],
     stats: [
