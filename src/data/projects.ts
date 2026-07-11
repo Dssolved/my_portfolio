@@ -177,10 +177,10 @@ export const projectsByLocale = {
         },
       ],
       previewImage: {
-        src: "/images/projects/warehouse-location/dashboard-overview.png",
-        alt: "Дашборд выбора локации склада в DataLens: спрос, выручка, скоринг и карта",
-        width: 1828,
-        height: 903,
+        src: "/images/projects/warehouse-location/dashboard-collage.png",
+        alt: "Мини-дашборд проекта: карта спроса, скоринг стран, RFM-сегменты и загрузка складов",
+        width: 1868,
+        height: 1098,
       },
       highlights: [
         "Построил ETL на Airflow: 4 DAG, 11 таблиц из MySQL и PostgreSQL в RAW-слой аналитической базы.",
@@ -371,10 +371,10 @@ export const projectsByLocale = {
         },
       ],
       previewImage: {
-        src: "/images/projects/warehouse-location/dashboard-overview.png",
-        alt: "Warehouse-location DataLens dashboard: demand, revenue, scoring, and map",
-        width: 1828,
-        height: 903,
+        src: "/images/projects/warehouse-location/dashboard-collage.png",
+        alt: "Project mini-dashboard: demand map, country scoring, RFM segments, and warehouse load",
+        width: 1868,
+        height: 1098,
       },
       highlights: [
         "Built an Airflow ETL: 4 DAGs moving 11 tables from MySQL and PostgreSQL into the RAW layer.",
