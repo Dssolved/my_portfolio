@@ -177,10 +177,10 @@ export const projectsByLocale = {
         },
       ],
       previewImage: {
-        src: "/images/projects/warehouse-location/country-scoring.png",
-        alt: "Рейтинг стран по final_score: Китай далеко впереди",
-        width: 1600,
-        height: 900,
+        src: "/images/projects/warehouse-location/dashboard-overview.png",
+        alt: "Дашборд выбора локации склада в DataLens: спрос, выручка, скоринг и карта",
+        width: 1828,
+        height: 903,
       },
       highlights: [
         "Построил ETL на Airflow: 4 DAG, 11 таблиц из MySQL и PostgreSQL в RAW-слой аналитической базы.",
@@ -371,10 +371,10 @@ export const projectsByLocale = {
         },
       ],
       previewImage: {
-        src: "/images/projects/warehouse-location/country-scoring.png",
-        alt: "Country scoring by final_score: China far ahead",
-        width: 1600,
-        height: 900,
+        src: "/images/projects/warehouse-location/dashboard-overview.png",
+        alt: "Warehouse-location DataLens dashboard: demand, revenue, scoring, and map",
+        width: 1828,
+        height: 903,
       },
       highlights: [
         "Built an Airflow ETL: 4 DAGs moving 11 tables from MySQL and PostgreSQL into the RAW layer.",
