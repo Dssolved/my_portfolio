@@ -25,8 +25,7 @@ const heroContentByLocale: Record<
     profileTitle: string;
     profileRows: [string, string][];
     stats: {
-      label: string;
-      value: string;
+      title: string;
       detail: string;
       icon: typeof TimerReset;
     }[];
@@ -45,21 +44,18 @@ const heroContentByLocale: Record<
     ],
     stats: [
       {
-        label: "Автоматизация отчетности",
-        value: "недели → минуты",
-        detail: "ручной процесс стал Python-инструментом",
+        title: "Автоматизация отчетности",
+        detail: "недели → минуты",
         icon: TimerReset,
       },
       {
-        label: "PM2.5 исследование",
-        value: "1,826 дней",
-        detail: "очистка данных, графики и статистика",
+        title: "Аналитика и ETL",
+        detail: "пайплайны, витрины, дашборды",
         icon: DatabaseZap,
       },
       {
-        label: "BI-дашборд",
-        value: "6 городов · 3 источника",
-        detail: "OpenAQ, Open-Meteo и World Bank",
+        title: "BI и визуализация",
+        detail: "Power BI · Yandex DataLens",
         icon: ChartColumnIncreasing,
       },
     ],
@@ -77,21 +73,18 @@ const heroContentByLocale: Record<
     ],
     stats: [
       {
-        label: "Reporting automation",
-        value: "weeks → minutes",
-        detail: "manual process became a Python tool",
+        title: "Reporting automation",
+        detail: "weeks → minutes",
         icon: TimerReset,
       },
       {
-        label: "PM2.5 research",
-        value: "1,826 days",
-        detail: "data cleaning, charts, and statistics",
+        title: "Analytics & ETL",
+        detail: "pipelines, data marts, dashboards",
         icon: DatabaseZap,
       },
       {
-        label: "BI dashboard",
-        value: "6 cities · 3 sources",
-        detail: "OpenAQ, Open-Meteo, and World Bank",
+        title: "BI & visualization",
+        detail: "Power BI · Yandex DataLens",
         icon: ChartColumnIncreasing,
       },
     ],
@@ -147,15 +140,10 @@ export function HeroSection({ content }: HeroSectionProps) {
               const Icon = stat.icon;
 
               return (
-                <div key={stat.label} className="data-surface rounded-md p-4">
-                  <div className="flex items-center justify-between gap-4">
-                    <p className="text-xs font-medium text-muted-foreground">
-                      {stat.label}
-                    </p>
-                    <Icon className="size-4 text-primary" />
-                  </div>
-                  <p className="mt-3 text-xl font-semibold sm:text-2xl">
-                    {stat.value}
+                <div key={stat.title} className="data-surface rounded-md p-4">
+                  <Icon className="size-5 text-primary" />
+                  <p className="mt-3 text-base font-semibold leading-6 sm:text-lg">
+                    {stat.title}
                   </p>
                   <p className="mt-1 text-xs leading-5 text-muted-foreground">
                     {stat.detail}
