@@ -158,12 +158,41 @@ export const projectsByLocale = {
       year: "2026",
       status: "case-study",
       stack: ["Python", "SQL", "MySQL", "PostgreSQL", "Airflow", "DataLens"],
+      featured: true,
+      metrics: [
+        {
+          label: "Рынок-лидер",
+          value: "31%",
+          description: "Китай, доля доставленных заказов",
+        },
+        {
+          label: "ETL на Airflow",
+          value: "4 DAG",
+          description: "11 таблиц, 2 источника",
+        },
+        {
+          label: "Дашборды",
+          value: "5 в DataLens",
+          description: "6 витрин под ними",
+        },
+      ],
+      previewImage: {
+        src: "/images/projects/warehouse-location/country-scoring.png",
+        alt: "Рейтинг стран по final_score: Китай далеко впереди",
+        width: 1600,
+        height: 900,
+      },
       highlights: [
         "Построил ETL на Airflow: 4 DAG, 11 таблиц из MySQL и PostgreSQL в RAW-слой аналитической базы.",
         "Спроектировал 6 витрин (заказы, продажи, RFM, скоринг стран/городов, производительность складов) и 5 дашбордов DataLens.",
         "Свел Shop- и WMS-данные для скоринга локации склада: рынок-лидер с 31% всех доставленных заказов.",
       ],
-      links: [],
+      links: [
+        {
+          label: "Открыть кейс",
+          href: "/projects/ecommerce-wms-analytics",
+        },
+      ],
     },
   ],
   en: [
@@ -323,12 +352,41 @@ export const projectsByLocale = {
       year: "2026",
       status: "case-study",
       stack: ["Python", "SQL", "MySQL", "PostgreSQL", "Airflow", "DataLens"],
+      featured: true,
+      metrics: [
+        {
+          label: "Leading market",
+          value: "31%",
+          description: "China, share of delivered orders",
+        },
+        {
+          label: "Airflow ETL",
+          value: "4 DAGs",
+          description: "11 tables, 2 sources",
+        },
+        {
+          label: "Dashboards",
+          value: "5 in DataLens",
+          description: "6 marts underneath",
+        },
+      ],
+      previewImage: {
+        src: "/images/projects/warehouse-location/country-scoring.png",
+        alt: "Country scoring by final_score: China far ahead",
+        width: 1600,
+        height: 900,
+      },
       highlights: [
         "Built an Airflow ETL: 4 DAGs moving 11 tables from MySQL and PostgreSQL into the RAW layer.",
         "Designed 6 data marts (orders, sales, RFM, country/city scoring, warehouse performance) and 5 DataLens dashboards.",
         "Joined Shop and WMS data to score a warehouse location: the leading market held 31% of all delivered orders.",
       ],
-      links: [],
+      links: [
+        {
+          label: "View case study",
+          href: "/en/projects/ecommerce-wms-analytics",
+        },
+      ],
     },
   ],
 } satisfies Record<Locale, Project[]>;

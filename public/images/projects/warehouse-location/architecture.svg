@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" font-family="'Segoe UI', system-ui, -apple-system, Roboto, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#94a3b8" />
+    </marker>
+  </defs>
+
+  <rect width="1600" height="900" fill="#ffffff" />
+
+  <text x="800" y="82" text-anchor="middle" font-size="44" font-weight="700" fill="#0f172a">End-to-end analytics pipeline</text>
+  <text x="800" y="126" text-anchor="middle" font-size="26" fill="#64748b">Shop + WMS → Airflow → RAW → data marts → DataLens</text>
+
+  <!-- stage labels -->
+  <text x="155" y="306" text-anchor="middle" font-size="22" letter-spacing="2" fill="#94a3b8">SOURCES</text>
+  <text x="445" y="306" text-anchor="middle" font-size="22" letter-spacing="2" fill="#94a3b8">ETL</text>
+  <text x="730" y="306" text-anchor="middle" font-size="22" letter-spacing="2" fill="#94a3b8">STORAGE</text>
+  <text x="1040" y="306" text-anchor="middle" font-size="22" letter-spacing="2" fill="#94a3b8">MODELING</text>
+  <text x="1390" y="306" text-anchor="middle" font-size="22" letter-spacing="2" fill="#94a3b8">BI</text>
+
+  <!-- Sources -->
+  <rect x="40" y="360" width="230" height="90" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2" />
+  <text x="155" y="400" text-anchor="middle" font-size="28" font-weight="600" fill="#0f172a">Shop</text>
+  <text x="155" y="430" text-anchor="middle" font-size="22" fill="#64748b">MySQL</text>
+  <rect x="40" y="470" width="230" height="90" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2" />
+  <text x="155" y="510" text-anchor="middle" font-size="28" font-weight="600" fill="#0f172a">WMS</text>
+  <text x="155" y="540" text-anchor="middle" font-size="22" fill="#64748b">PostgreSQL</text>
+
+  <!-- Airflow -->
+  <rect x="320" y="395" width="250" height="130" rx="12" fill="#ffffff" stroke="#1f6f6a" stroke-width="2.5" />
+  <text x="445" y="443" text-anchor="middle" font-size="28" font-weight="600" fill="#0f172a">Apache Airflow</text>
+  <text x="445" y="475" text-anchor="middle" font-size="22" fill="#1f6f6a">4 DAGs</text>
+  <text x="445" y="503" text-anchor="middle" font-size="20" fill="#64748b">TRUNCATE + INSERT</text>
+
+  <!-- RAW -->
+  <rect x="620" y="400" width="220" height="120" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2" />
+  <text x="730" y="448" text-anchor="middle" font-size="28" font-weight="600" fill="#0f172a">RAW layer</text>
+  <text x="730" y="480" text-anchor="middle" font-size="22" fill="#64748b">11 tables</text>
+
+  <!-- Marts -->
+  <rect x="890" y="350" width="300" height="230" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" />
+  <text x="1040" y="392" text-anchor="middle" font-size="26" font-weight="600" fill="#0f172a">6 data marts</text>
+  <g font-size="21" fill="#475569">
+    <text x="912" y="430">· orders</text>
+    <text x="912" y="457">· sales_items</text>
+    <text x="912" y="484">· rfm_customers</text>
+    <text x="912" y="511">· country_candidates</text>
+    <text x="912" y="538">· warehouse_candidates</text>
+    <text x="912" y="565">· warehouse_performance</text>
+  </g>
+
+  <!-- Dashboards -->
+  <rect x="1240" y="350" width="300" height="230" rx="12" fill="#ffffff" stroke="#1f6f6a" stroke-width="2.5" />
+  <text x="1390" y="392" text-anchor="middle" font-size="24" font-weight="600" fill="#0f172a">5 DataLens dashboards</text>
+  <g font-size="21" fill="#475569">
+    <text x="1262" y="432">· Orders &amp; sales</text>
+    <text x="1262" y="461">· Product analytics</text>
+    <text x="1262" y="490">· RFM customers</text>
+    <text x="1262" y="519">· Order geography</text>
+    <text x="1262" y="548">· Warehouse location</text>
+  </g>
+
+  <!-- arrows -->
+  <g stroke="#94a3b8" stroke-width="2.5">
+    <line x1="278" y1="460" x2="312" y2="460" marker-end="url(#arrow)" />
+    <line x1="578" y1="460" x2="612" y2="460" marker-end="url(#arrow)" />
+    <line x1="848" y1="460" x2="882" y2="460" marker-end="url(#arrow)" />
+    <line x1="1198" y1="460" x2="1232" y2="460" marker-end="url(#arrow)" />
+  </g>
+</svg>

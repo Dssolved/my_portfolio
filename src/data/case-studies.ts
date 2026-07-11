@@ -740,3 +740,386 @@ export const slaReportingCaseStudies = {
     externalLinkLabel: "Privacy",
   },
 } satisfies Record<Locale, CaseStudy>;
+
+export const warehouseLocationCaseStudies = {
+  ru: {
+    slug: "ecommerce-wms-analytics",
+    title: "E-commerce и WMS аналитика: выбор локации нового склада",
+    subtitle:
+      "Сквозная аналитическая платформа на стажировке в SMALL: ETL на Airflow, 6 витрин и 5 дашбордов DataLens - от RFM-сегментации до скоринга локации нового распределительного центра на данных Shop и WMS.",
+    year: "2026",
+    context:
+      "Стажерский проект на синтетических данных. Задача: собрать аналитику для интернет-магазина и на данных обосновать, где открывать новый распределительный центр. Дашборды опубликованы в Yandex DataLens и доступны по ссылкам ниже.",
+    myRole: [
+      "Спроектировал RAW-слой и ETL на Apache Airflow (декораторные DAG, TRUNCATE + INSERT) для двух источников - Shop (MySQL) и WMS (PostgreSQL).",
+      "Построил 6 витрин и скоринговую модель кандидатов по странам и городам с калибровкой весов.",
+      "Свел Shop- и WMS-данные в витрину производительности складов: расстояния через Haversine и JOIN по координатам заказов.",
+      "Собрал 5 дашбордов в DataLens и сформулировал рекомендацию по локации на основе скоринга.",
+    ],
+    stack: [
+      "Python",
+      "SQL",
+      "MySQL",
+      "PostgreSQL",
+      "Apache Airflow",
+      "Yandex DataLens",
+      "pandas",
+      "Haversine",
+    ],
+    metrics: [
+      {
+        label: "Рынок-лидер",
+        value: "31%",
+        description: "Китай: доля всех доставленных заказов (54 из 174).",
+      },
+      {
+        label: "final_score Китая",
+        value: "0.9968",
+        description: "против 0.149 у ближайшего преследователя (Индия).",
+      },
+      {
+        label: "Аналитический слой",
+        value: "6 витрин",
+        description: "заказы, продажи, RFM, скоринг стран/городов, склады.",
+      },
+      {
+        label: "ETL на Airflow",
+        value: "4 DAG",
+        description: "11 таблиц из MySQL и PostgreSQL в RAW-слой.",
+      },
+    ],
+    sections: [
+      {
+        title: "Задача",
+        body: [
+          "Компания рассматривала открытие нового распределительного центра и хотела аналитическое обоснование локации, а не решение по интуиции. Параллельно нужно было выстроить базовую аналитику интернет-магазина: заказы, продажи и сегментацию клиентов.",
+          "Данные приходили из двух систем: интернет-магазина (Shop, MySQL) и складского учета (WMS, PostgreSQL). Их нужно было свести в единый аналитический контур и превратить в дашборды и понятную рекомендацию.",
+        ],
+      },
+      {
+        title: "Данные и пайплайн",
+        body: [
+          "Собрал ETL на Apache Airflow в декораторном стиле: 4 DAG загружают 11 таблиц из двух источников (MySQL и PostgreSQL) в RAW-слой аналитической PostgreSQL по принципу TRUNCATE + INSERT, что делает загрузку идемпотентной.",
+          "Поверх RAW построил 6 витрин: заказы, позиции заказов, RFM-сегментация клиентов, кандидаты-страны, кандидаты-города и производительность складов. Все витрины пересобираются одним DAG с общей валидацией на непустоту.",
+        ],
+      },
+      {
+        title: "Скоринг локации",
+        body: [
+          "Для каждого кандидата (страна и город) считал спрос, выручку, число клиентов и среднее расстояние Haversine до доставленных заказов. Итоговый скор: final_score = 0.45 * заказы + 0.30 * выручка + 0.15 * клиенты + 0.10 * близость.",
+          "Первая версия давала вес расстоянию 20%, и в топ попадали города с одним заказом: расстояния между всеми точками в выборке близки (5800-6600 км), поэтому после нормализации давали высокий балл независимо от реального спроса. Снизил вес расстояния до 10%, а заказов - поднял до 45%; картина стала логичной.",
+        ],
+      },
+      {
+        title: "Что показали данные",
+        body: [
+          "На страновом уровне вывод однозначный: Китай - 54 доставленных заказа (31% от всех) и final_score 0.9968 против 0.149 у Индии. Разрыв слишком большой, чтобы быть артефактом малой выборки.",
+          "На уровне города данных мало (2-3 заказа на город), рейтинги неустойчивы: лидеры по Китаю - Tangshan, Changsha, Nantong, но для финального выбора этого недостаточно.",
+          "Подключение WMS дало операционный срез по 6 действующим складам: Tokyo East берет 43% всех отгрузок при минимальном расстоянии доставки (2453 км) - удобно для азиатского спроса, но это же и риск перегрузки при росте. Berlin Central лидирует по возвратам (11.8%), Sydney West - самый медленный по времени выполнения заказа.",
+        ],
+      },
+      {
+        title: "Вывод",
+        body: [
+          "На уровне страны решение уверенное - Китай. На уровне города данных недостаточно: для финального выбора нужны внешние факторы (стоимость аренды, транспортная инфраструктура, близость к поставщикам, таможенные условия).",
+          "Главная ценность проекта - не одна цифра, а воспроизводимый контур: от сырых данных двух систем до витрин, дашбордов и честной, обоснованной рекомендации.",
+        ],
+      },
+    ],
+    figures: [
+      {
+        title: "Архитектура платформы",
+        description:
+          "Два источника (Shop MySQL, WMS PostgreSQL) проходят через ETL на Airflow в RAW-слой, затем в 6 витрин и 5 дашбордов DataLens.",
+        src: "/images/projects/warehouse-location/architecture.svg",
+        alt: "Схема пайплайна: источники, Airflow, RAW-слой, витрины и дашборды",
+        width: 1600,
+        height: 900,
+      },
+      {
+        title: "Карта спроса по странам",
+        description:
+          "Размер точки - доставленные заказы, цвет - final_score. Китай выделяется и по объему, и по скорингу.",
+        src: "/images/projects/warehouse-location/demand-map.png",
+        alt: "Карта мира с точками спроса по странам, Китай выделен",
+        width: 1600,
+        height: 1000,
+      },
+      {
+        title: "Рейтинг стран по final_score",
+        description:
+          "Китай около 1.0 против ~0.11-0.15 у ближайших преследователей - разрыв слишком велик, чтобы быть случайностью.",
+        src: "/images/projects/warehouse-location/country-scoring.png",
+        alt: "Столбчатая диаграмма скоринга стран, Китай далеко впереди",
+        width: 1600,
+        height: 900,
+      },
+      {
+        title: "RFM-сегментация клиентов",
+        description:
+          "Распределение клиентов по сегментам: Regular Customers, Potential Loyalists, Champions, At Risk и другие.",
+        src: "/images/projects/warehouse-location/rfm-segmentation.png",
+        alt: "Столбчатая диаграмма распределения клиентов по RFM-сегментам",
+        width: 1600,
+        height: 900,
+      },
+      {
+        title: "Загрузка складов",
+        description:
+          "utilization = остатки / вместимость. Даже у самого загруженного склада остается заметный запас мощности.",
+        src: "/images/projects/warehouse-location/warehouse-utilization.png",
+        alt: "Столбчатая диаграмма загрузки складов в процентах",
+        width: 1600,
+        height: 900,
+      },
+      {
+        title: "Время выполнения заказа",
+        description:
+          "Среднее время полного цикла по складам; Sydney West - самый медленный (около 138 часов).",
+        src: "/images/projects/warehouse-location/warehouse-fulfillment-hours.png",
+        alt: "Столбчатая диаграмма среднего времени выполнения заказа по складам",
+        width: 1600,
+        height: 900,
+      },
+      {
+        title: "Процент возвратов",
+        description:
+          "Berlin Central - максимум (11.8%), Sydney West - без возвратов на малой выборке отгрузок.",
+        src: "/images/projects/warehouse-location/warehouse-return-rate.png",
+        alt: "Столбчатая диаграмма процента возвратов по складам",
+        width: 1600,
+        height: 900,
+      },
+      {
+        title: "Среднее расстояние доставки",
+        description:
+          "Tokyo East - минимум (2453 км): близость к азиатскому спросу, но и риск перегрузки (43% всех отгрузок).",
+        src: "/images/projects/warehouse-location/warehouse-delivery-distance.png",
+        alt: "Столбчатая диаграмма среднего расстояния доставки по складам",
+        width: 1600,
+        height: 900,
+      },
+    ],
+    links: [
+      {
+        label: "Анализ локации нового склада",
+        href: "https://datalens.yandex/2o1j6g9tpfh2l",
+        isExternal: true,
+      },
+      {
+        label: "RFM-анализ клиентов",
+        href: "https://datalens.yandex/xigcmntnk724g",
+        isExternal: true,
+      },
+      {
+        label: "Аналитика заказов и продаж",
+        href: "https://datalens.yandex/auh95uv1ke9it",
+        isExternal: true,
+      },
+      {
+        label: "Товарная аналитика",
+        href: "https://datalens.yandex/k4xz1k8e968a3",
+        isExternal: true,
+      },
+      {
+        label: "География заказов",
+        href: "https://datalens.yandex/3ou2nnylbwekm",
+        isExternal: true,
+      },
+    ],
+    note: "Учебный проект на синтетических данных в рамках стажировки в SMALL. Дашборды доступны, пока поднята учебная база; статичные графики выше сохраняют результат независимо от нее.",
+    backHref: "/",
+    backLabel: "Назад на главную",
+    externalLinkLabel: "Живые дашборды",
+  },
+  en: {
+    slug: "ecommerce-wms-analytics",
+    title: "E-commerce & WMS Analytics: New Warehouse Location",
+    subtitle:
+      "An end-to-end analytics platform built during my internship at SMALL: an Airflow ETL, 6 data marts, and 5 DataLens dashboards - from RFM segmentation to scoring a new distribution center location on Shop and WMS data.",
+    year: "2026",
+    context:
+      "An internship project on synthetic data. The goal: build analytics for an online store and justify, from data, where to open a new distribution center. The dashboards are published in Yandex DataLens and linked below.",
+    myRole: [
+      "Designed the RAW layer and an Apache Airflow ETL (decorator-style DAGs, TRUNCATE + INSERT) for two sources - Shop (MySQL) and WMS (PostgreSQL).",
+      "Built 6 data marts and a country/city candidate scoring model with weight calibration.",
+      "Joined Shop and WMS data into a warehouse-performance mart: distances via Haversine and a JOIN on order coordinates.",
+      "Created 5 DataLens dashboards and delivered a data-based location recommendation.",
+    ],
+    stack: [
+      "Python",
+      "SQL",
+      "MySQL",
+      "PostgreSQL",
+      "Apache Airflow",
+      "Yandex DataLens",
+      "pandas",
+      "Haversine",
+    ],
+    metrics: [
+      {
+        label: "Leading market",
+        value: "31%",
+        description: "China: share of all delivered orders (54 of 174).",
+      },
+      {
+        label: "China final_score",
+        value: "0.9968",
+        description: "vs 0.149 for the runner-up (India).",
+      },
+      {
+        label: "Analytics layer",
+        value: "6 marts",
+        description: "orders, sales, RFM, country/city scoring, warehouses.",
+      },
+      {
+        label: "Airflow ETL",
+        value: "4 DAGs",
+        description: "11 tables from MySQL and PostgreSQL into RAW.",
+      },
+    ],
+    sections: [
+      {
+        title: "The task",
+        body: [
+          "The company was considering a new distribution center and wanted a data-based rationale for the location rather than a gut call. In parallel, it needed baseline store analytics: orders, sales, and customer segmentation.",
+          "Data came from two systems: the online store (Shop, MySQL) and warehouse management (WMS, PostgreSQL). They had to be unified into a single analytics layer and turned into dashboards and a clear recommendation.",
+        ],
+      },
+      {
+        title: "Data & pipeline",
+        body: [
+          "Built an Apache Airflow ETL in decorator style: 4 DAGs load 11 tables from two sources (MySQL and PostgreSQL) into the RAW layer of an analytics PostgreSQL using TRUNCATE + INSERT, which keeps loads idempotent.",
+          "On top of RAW I built 6 marts: orders, order items, RFM customer segmentation, country candidates, city candidates, and warehouse performance. All marts rebuild in a single DAG with a shared non-empty validation.",
+        ],
+      },
+      {
+        title: "Location scoring",
+        body: [
+          "For each candidate (country and city) I computed demand, revenue, customer count, and the average Haversine distance to delivered orders. Final score: final_score = 0.45 * orders + 0.30 * revenue + 0.15 * customers + 0.10 * proximity.",
+          "The first version weighted distance at 20%, and cities with a single order climbed to the top: distances between all points in the sample are similar (5800-6600 km), so after normalization they scored high regardless of real demand. I cut the distance weight to 10% and raised orders to 45%; the picture became sensible.",
+        ],
+      },
+      {
+        title: "What the data showed",
+        body: [
+          "At the country level the conclusion is unambiguous: China - 54 delivered orders (31% of all) and a final_score of 0.9968 vs 0.149 for India. The gap is far too large to be a small-sample artifact.",
+          "At the city level data is sparse (2-3 orders per city) and rankings are unstable: the top Chinese cities are Tangshan, Changsha, and Nantong, but that is not enough for a final choice.",
+          "Adding WMS gave an operational view of 6 active warehouses: Tokyo East handles 43% of all shipments at the shortest delivery distance (2453 km) - convenient for Asian demand, but also an overload risk as it grows. Berlin Central leads on returns (11.8%), and Sydney West is the slowest on fulfillment time.",
+        ],
+      },
+      {
+        title: "Conclusion",
+        body: [
+          "At the country level the decision is confident - China. At the city level the data is insufficient: a final choice needs external factors (rent cost, transport infrastructure, proximity to suppliers, customs).",
+          "The main value of the project is not a single number but a reproducible pipeline: from raw data in two systems to marts, dashboards, and an honest, well-grounded recommendation.",
+        ],
+      },
+    ],
+    figures: [
+      {
+        title: "Platform architecture",
+        description:
+          "Two sources (Shop MySQL, WMS PostgreSQL) flow through an Airflow ETL into the RAW layer, then into 6 marts and 5 DataLens dashboards.",
+        src: "/images/projects/warehouse-location/architecture.svg",
+        alt: "Pipeline diagram: sources, Airflow, RAW layer, marts, and dashboards",
+        width: 1600,
+        height: 900,
+      },
+      {
+        title: "Country demand map",
+        description:
+          "Point size is delivered orders, color is final_score. China stands out on both volume and score.",
+        src: "/images/projects/warehouse-location/demand-map.png",
+        alt: "World map of demand points by country, China highlighted",
+        width: 1600,
+        height: 1000,
+      },
+      {
+        title: "Country scoring by final_score",
+        description:
+          "China near 1.0 vs ~0.11-0.15 for the closest followers - a gap too large to be chance.",
+        src: "/images/projects/warehouse-location/country-scoring.png",
+        alt: "Bar chart of country scoring with China far ahead",
+        width: 1600,
+        height: 900,
+      },
+      {
+        title: "RFM customer segmentation",
+        description:
+          "Customer distribution across segments: Regular Customers, Potential Loyalists, Champions, At Risk, and others.",
+        src: "/images/projects/warehouse-location/rfm-segmentation.png",
+        alt: "Bar chart of customer distribution across RFM segments",
+        width: 1600,
+        height: 900,
+      },
+      {
+        title: "Warehouse utilization",
+        description:
+          "Utilization = units on hand / capacity. Even the busiest warehouse keeps a clear capacity buffer.",
+        src: "/images/projects/warehouse-location/warehouse-utilization.png",
+        alt: "Bar chart of warehouse utilization in percent",
+        width: 1600,
+        height: 900,
+      },
+      {
+        title: "Order fulfillment time",
+        description:
+          "Average full-cycle time per warehouse; Sydney West is the slowest (about 138 hours).",
+        src: "/images/projects/warehouse-location/warehouse-fulfillment-hours.png",
+        alt: "Bar chart of average order fulfillment time per warehouse",
+        width: 1600,
+        height: 900,
+      },
+      {
+        title: "Return rate",
+        description:
+          "Berlin Central is the highest (11.8%); Sydney West has no returns on a small shipment sample.",
+        src: "/images/projects/warehouse-location/warehouse-return-rate.png",
+        alt: "Bar chart of return rate per warehouse",
+        width: 1600,
+        height: 900,
+      },
+      {
+        title: "Average delivery distance",
+        description:
+          "Tokyo East is the lowest (2453 km): close to Asian demand, but also an overload risk (43% of all shipments).",
+        src: "/images/projects/warehouse-location/warehouse-delivery-distance.png",
+        alt: "Bar chart of average delivery distance per warehouse",
+        width: 1600,
+        height: 900,
+      },
+    ],
+    links: [
+      {
+        label: "New warehouse location analysis",
+        href: "https://datalens.yandex/2o1j6g9tpfh2l",
+        isExternal: true,
+      },
+      {
+        label: "RFM customer analysis",
+        href: "https://datalens.yandex/xigcmntnk724g",
+        isExternal: true,
+      },
+      {
+        label: "Orders & sales analytics",
+        href: "https://datalens.yandex/auh95uv1ke9it",
+        isExternal: true,
+      },
+      {
+        label: "Product analytics",
+        href: "https://datalens.yandex/k4xz1k8e968a3",
+        isExternal: true,
+      },
+      {
+        label: "Order geography",
+        href: "https://datalens.yandex/3ou2nnylbwekm",
+        isExternal: true,
+      },
+    ],
+    note: "An internship project on synthetic data at SMALL. The dashboards are live while the training database is running; the static charts above preserve the result regardless.",
+    backHref: "/en",
+    backLabel: "Back to home",
+    externalLinkLabel: "Live dashboards",
+  },
+} satisfies Record<Locale, CaseStudy>;
