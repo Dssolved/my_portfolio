@@ -38,7 +38,7 @@ export const profiles = {
     bio: "Аналитик данных с опытом в операционной аналитике и автоматизации отчетности. Использую SQL, Python, Excel/Google Sheets и Power BI для обработки данных, проверки метрик, построения отчетов и визуализации результатов.",
     positioningNote:
       "Фокус сейчас - data analytics, операционная аналитика, автоматизация отчетности и прикладные аналитические инструменты для бизнеса.",
-    resumeHref: "/resume/data-analyst.pdf",
+    resumeHref: "/resume/data-analyst-ru.pdf",
     navItems: [
       { label: "Проекты", href: "/#projects" },
       { label: "Опыт", href: "/#experience" },
@@ -58,7 +58,7 @@ export const profiles = {
     bio: "Data analyst with hands-on experience in operations analytics and reporting automation. I use SQL, Python, Excel/Google Sheets, and Power BI to process data, validate metrics, build reports, and visualize business results.",
     positioningNote:
       "Current focus: data analytics, operations analytics, reporting automation, and practical analytics tools for business teams.",
-    resumeHref: "/resume/data-analyst.pdf",
+    resumeHref: "/resume/data-analyst-en.pdf",
     navItems: [
       { label: "Projects", href: "/en#projects" },
       { label: "Experience", href: "/en#experience" },

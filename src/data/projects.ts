@@ -152,16 +152,16 @@ export const projectsByLocale = {
     },
     {
       slug: "rfm-ecommerce-analytics",
-      title: "RFM-анализ e-commerce и пайплайны данных",
+      title: "E-commerce и WMS аналитика: ETL, RFM и выбор локации склада",
       summary:
-        "Стажерский аналитический проект в SMALL: RFM-сегментация, WMS-контекст и построение пайплайнов данных.",
+        "Стажерский проект в SMALL: сквозной ETL-пайплайн на Airflow, 6 витрин и 5 дашбордов DataLens - от RFM-сегментации до скоринга локации нового распределительного центра.",
       year: "2026",
       status: "case-study",
       stack: ["Python", "SQL", "MySQL", "PostgreSQL", "Airflow", "DataLens"],
       highlights: [
-        "Работал с e-commerce данными и логикой RFM-сегментации.",
-        "Изучал WMS-контекст и подготовку данных для аналитики.",
-        "Строил пайплайны и витрины для последующей визуализации.",
+        "Построил ETL на Airflow: 4 DAG, 11 таблиц из MySQL и PostgreSQL в RAW-слой аналитической базы.",
+        "Спроектировал 6 витрин (заказы, продажи, RFM, скоринг стран/городов, производительность складов) и 5 дашбордов DataLens.",
+        "Свел Shop- и WMS-данные для скоринга локации склада: рынок-лидер с 31% всех доставленных заказов.",
       ],
       links: [],
     },
@@ -317,16 +317,16 @@ export const projectsByLocale = {
     },
     {
       slug: "rfm-ecommerce-analytics",
-      title: "RFM E-commerce Analytics and Data Pipelines",
+      title: "E-commerce & WMS Analytics: ETL, RFM, and Warehouse Location",
       summary:
-        "An internship analytics project at SMALL covering RFM segmentation, WMS context, and data pipeline development.",
+        "An internship project at SMALL: an end-to-end Airflow ETL pipeline, 6 data marts, and 5 DataLens dashboards - from RFM segmentation to scoring a new distribution center location.",
       year: "2026",
       status: "case-study",
       stack: ["Python", "SQL", "MySQL", "PostgreSQL", "Airflow", "DataLens"],
       highlights: [
-        "Worked with e-commerce data and RFM segmentation logic.",
-        "Studied WMS context and data preparation for analytics.",
-        "Built pipelines and analytical datasets for visualization.",
+        "Built an Airflow ETL: 4 DAGs moving 11 tables from MySQL and PostgreSQL into the RAW layer.",
+        "Designed 6 data marts (orders, sales, RFM, country/city scoring, warehouse performance) and 5 DataLens dashboards.",
+        "Joined Shop and WMS data to score a warehouse location: the leading market held 31% of all delivered orders.",
       ],
       links: [],
     },
