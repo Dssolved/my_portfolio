@@ -19,10 +19,8 @@ export type Profile = {
   role: string;
   location: string;
   email: string;
-  telegram: string;
   availability: string;
   bio: string;
-  positioningNote: string;
   resumeHref: string;
   navItems: NavItem[];
   socialLinks: SocialLink[];
@@ -141,9 +139,6 @@ export type PortfolioCopy = {
   projectCta: string;
   contactCta: string;
   locationLabel: string;
-  emailLabel: string;
-  telegramLabel: string;
-  resumeLabel: string;
   openResumeLabel: string;
   downloadResumeLabel: string;
   projectLinksFallback: string;

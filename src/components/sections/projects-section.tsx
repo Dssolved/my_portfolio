@@ -11,7 +11,18 @@ type ProjectsSectionProps = {
 
 export function ProjectsSection({ content }: ProjectsSectionProps) {
   const { projects, copy, locale } = content;
-  const featuredProjects = projects.filter((project) => project.featured);
+  // Lead the featured block with the strongest, most end-to-end work.
+  const featuredOrder = [
+    "rfm-ecommerce-analytics",
+    "pm25-almaty-research",
+    "sla-reporting-data-reconciliation",
+    "air-quality-power-bi-dashboard",
+  ];
+  const featuredProjects = projects
+    .filter((project) => project.featured)
+    .sort(
+      (a, b) => featuredOrder.indexOf(a.slug) - featuredOrder.indexOf(b.slug),
+    );
   const otherProjects = projects.filter((project) => !project.featured);
   const featuredTitle =
     locale === "ru" ? "Избранные кейсы" : "Featured case studies";

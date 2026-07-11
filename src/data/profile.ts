@@ -32,12 +32,9 @@ export const profiles = {
     role: "Операционный аналитик / Аналитик данных",
     location: "Алматы, Казахстан",
     email: "artm.ostanin@gmail.com",
-    telegram: "@dssolved",
     availability:
       "Открыт к стажировкам, проектным задачам и junior-позициям в аналитике данных",
     bio: "Аналитик данных с опытом в операционной аналитике и автоматизации отчетности. Использую SQL, Python, Excel/Google Sheets и Power BI для обработки данных, проверки метрик, построения отчетов и визуализации результатов.",
-    positioningNote:
-      "Фокус сейчас - data analytics, операционная аналитика, автоматизация отчетности и прикладные аналитические инструменты для бизнеса.",
     resumeHref: "/resume/data-analyst-ru.pdf",
     navItems: [
       { label: "Проекты", href: "/#projects" },
@@ -53,11 +50,8 @@ export const profiles = {
     role: "Operations Analyst / Data Analyst",
     location: "Almaty, Kazakhstan",
     email: "artm.ostanin@gmail.com",
-    telegram: "@dssolved",
     availability: "Open to internships, project work, and junior data analytics roles",
     bio: "Data analyst with hands-on experience in operations analytics and reporting automation. I use SQL, Python, Excel/Google Sheets, and Power BI to process data, validate metrics, build reports, and visualize business results.",
-    positioningNote:
-      "Current focus: data analytics, operations analytics, reporting automation, and practical analytics tools for business teams.",
     resumeHref: "/resume/data-analyst-en.pdf",
     navItems: [
       { label: "Projects", href: "/en#projects" },
