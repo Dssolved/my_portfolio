@@ -25,7 +25,9 @@ export function AnimatedSection({
     : {
         initial: { opacity: 0, y: 16 },
         whileInView: { opacity: 1, y: 0 },
-        viewport: { once: true, amount: 0.2 },
+        // "some" (not a fixed 0-1 fraction) triggers on any intersection,
+        // so very tall sections still animate in on short mobile viewports.
+        viewport: { once: true, amount: "some" as const },
         transition: { duration: 0.45, ease: "easeOut" as const, delay },
       };
 
