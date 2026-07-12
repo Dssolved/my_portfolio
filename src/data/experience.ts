@@ -185,10 +185,12 @@ export const languagesByLocale = {
   ru: [
     { name: "Русский", level: "Родной" },
     { name: "Английский", level: "B1" },
+    { name: "Казахский", level: "Базовый" },
   ],
   en: [
     { name: "Russian", level: "Native" },
     { name: "English", level: "B1" },
+    { name: "Kazakh", level: "Basic" },
   ],
 } satisfies Record<Locale, LanguageItem[]>;
 
