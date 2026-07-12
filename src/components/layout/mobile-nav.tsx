@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   BriefcaseBusiness,
   CodeXml,
@@ -14,6 +15,7 @@ import {
 import { Dialog } from "radix-ui";
 
 import { Button } from "@/components/ui/button";
+import { getAlternateHref } from "@/lib/locale";
 import type { PortfolioContent, SocialIcon } from "@/types/portfolio";
 
 const socialIcons = {
@@ -28,8 +30,10 @@ type MobileNavProps = {
 };
 
 export function MobileNav({ content }: MobileNavProps) {
-  const { profile, copy, locale, alternateHref } = content;
+  const { profile, copy, locale } = content;
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const alternateHref = getAlternateHref(pathname, locale);
 
   const openLabel = locale === "ru" ? "Открыть меню" : "Open menu";
   const closeLabel = locale === "ru" ? "Закрыть меню" : "Close menu";

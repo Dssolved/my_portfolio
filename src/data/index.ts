@@ -20,7 +20,6 @@ export const portfolioContent = {
   ru: {
     locale: "ru",
     alternateLocale: "en",
-    alternateHref: "/en",
     profile: profiles.ru,
     projects: projectsByLocale.ru,
     skillGroups: skillGroupsByLocale.ru,
@@ -33,7 +32,6 @@ export const portfolioContent = {
   en: {
     locale: "en",
     alternateLocale: "ru",
-    alternateHref: "/",
     profile: profiles.en,
     projects: projectsByLocale.en,
     skillGroups: skillGroupsByLocale.en,

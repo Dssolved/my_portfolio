@@ -162,7 +162,6 @@ export type PortfolioCopy = {
 export type PortfolioContent = {
   locale: Locale;
   alternateLocale: Locale;
-  alternateHref: "/" | "/en";
   profile: Profile;
   projects: Project[];
   skillGroups: SkillGroup[];

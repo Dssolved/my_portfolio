@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   BriefcaseBusiness,
   CodeXml,
@@ -9,6 +12,7 @@ import {
 
 import { MobileNav } from "@/components/layout/mobile-nav";
 import { Button } from "@/components/ui/button";
+import { getAlternateHref } from "@/lib/locale";
 import type { PortfolioContent, SocialIcon } from "@/types/portfolio";
 
 const socialIcons = {
@@ -23,8 +27,10 @@ type SiteHeaderProps = {
 };
 
 export function SiteHeader({ content }: SiteHeaderProps) {
-  const { profile, copy, locale, alternateHref } = content;
+  const { profile, copy, locale } = content;
   const homeHref = locale === "ru" ? "/" : "/en";
+  const pathname = usePathname();
+  const alternateHref = getAlternateHref(pathname, locale);
 
   return (
     <header className="sticky top-0 z-40 border-b bg-background/78 backdrop-blur-xl">

@@ -40,6 +40,22 @@ test("mobile menu opens and shows navigation links", async ({
   await expect(page.getByRole("link", { name: "Контакты" })).toBeVisible();
 });
 
+test("language switch stays on the equivalent page, not the home page", async ({
+  page,
+}, testInfo) => {
+  test.skip(
+    testInfo.project.name !== "Desktop Chrome",
+    "the desktop language link is hidden below md; MobileNav uses the same getAlternateHref helper",
+  );
+
+  await page.goto("/projects/pm25-almaty-research");
+  await page.getByRole("link", { name: "EN", exact: true }).click();
+  await expect(page).toHaveURL("/en/projects/pm25-almaty-research");
+
+  await page.getByRole("link", { name: "RU", exact: true }).click();
+  await expect(page).toHaveURL("/projects/pm25-almaty-research");
+});
+
 test("warehouse case study loads on both locales", async ({ page }) => {
   await page.goto("/projects/ecommerce-wms-analytics");
   await expect(page.locator("h1")).toContainText("E-commerce и WMS");
